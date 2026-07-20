@@ -4,20 +4,20 @@ https://github.com/Skysurver007/default_parameter_acs/raw/refs/heads/main/geniea
 
 
 
-# Pindah ke direktori home
-cd ~
+# 1. DOWNLOAD
 ```
 wget "https://github.com/Skysurver007/default_parameter_acs/raw/refs/heads/main/genieacs_backup_default.tar.gz" -O genieacs_backup_default.tar.gz
 ```
 
-
-
-
-# 1. Ekstrak file backup tersebut
+# 2. Ekstrak file backup tersebut
+```
 tar -xzvf ~/genieacs_backup_default.tar.gz -C ~/
-
-# 2. Restore ke MongoDB dan hapus konfigurasi yang salah (--drop)
+```
+# 3. Restore ke MongoDB dan hapus konfigurasi yang salah (--drop)
+```
 mongorestore --drop --db genieacs ~/genieacs_backup_default/genieacs
-
-# 3. Restart seluruh layanan GenieACS agar memuat konfigurasi yang baru
+```
+# 4. Restart seluruh layanan GenieACS agar memuat konfigurasi yang baru
+```
 sudo systemctl restart genieacs-cwmp genieacs-nbi genieacs-fs genieacs-ui
+```
